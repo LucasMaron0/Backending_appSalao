@@ -1,4 +1,6 @@
-INSERT INTO Salao (nome) VALUES ('Salão A');
+INSERT INTO User (username, role) VALUES ('lucas', '0');
+
+INSERT INTO Salao (nome, user_id) VALUES ('Salão A', '1');
 INSERT INTO Salao (nome) VALUES ('Salão B');
 INSERT INTO Salao (nome) VALUES ('Salão C');
 
@@ -6,6 +8,7 @@ INSERT INTO Salao (nome) VALUES ('Salão C');
 INSERT INTO Cliente (nome) VALUES ('cliente1');
 INSERT INTO Cliente (nome) VALUES ('cliente2');
 INSERT INTO Cliente (nome) VALUES ('cliente3');
+
 
 
 INSERT INTO Funcionario (nome, salao_residente_id) VALUES ('Funcionário A', 1);
