@@ -12,6 +12,7 @@ import java.util.List;
 public class AgendamentoDto {
 
     private int idAgendamento;
+    private String servico;
     private String nomeSalao;
     private String nomeCliente;
     private String nomeFuncionario;
@@ -21,6 +22,7 @@ public class AgendamentoDto {
 
     public AgendamentoDto(Agendamento agendamento){
         this.idAgendamento = agendamento.getId();
+        this.servico = agendamento.getServico();
         this.nomeSalao = agendamento.getSalao().getNome();
         this.nomeCliente = agendamento.getCliente().getNome();
         this.nomeFuncionario = agendamento.getFuncionario().getNome();

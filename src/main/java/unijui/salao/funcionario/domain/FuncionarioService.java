@@ -2,19 +2,28 @@ package unijui.salao.funcionario.domain;
 
 
 
+import org.springframework.http.ResponseEntity;
+import unijui.salao.funcionario.application.FuncionarioUpdateForm;
+import unijui.salao.domain.PeriodoDto;
 import unijui.salao.funcionario.application.FuncionarioDto;
 import unijui.salao.funcionario.application.FuncionarioForm;
 
+import java.text.ParseException;
 import java.util.List;
 
 
 public interface FuncionarioService {
 
-    public FuncionarioDto buscarFuncionarioPorId(int id);
+    FuncionarioDto buscarFuncionarioPorId(int id);
 
-    public List<FuncionarioDto> buscarTodosFuncionarios();
+    List<FuncionarioDto> buscarTodosFuncionarios();
 
-    public List<FuncionarioDto> buscarFuncionariosPorSalao(int idSalao);
+    List<FuncionarioDto> buscarFuncionariosPorSalao(int idSalao);
 
-    public FuncionarioDto cadastrarFuncionario(FuncionarioForm form);
+    FuncionarioDto cadastrarFuncionario(FuncionarioForm form);
+
+    List<PeriodoDto>  buscarPeriodosLivres (int idFuncionario) throws ParseException;
+    ResponseEntity<Void> deleterFuncionario(int idFuncionario);
+
+    ResponseEntity<FuncionarioDto> atualizarServicosFuncionario(FuncionarioUpdateForm form);
 }

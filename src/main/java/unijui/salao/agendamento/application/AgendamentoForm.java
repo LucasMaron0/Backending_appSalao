@@ -10,4 +10,5 @@ public class AgendamentoForm {
     private int idCliente;
     private String inicio;
     private String fim;
+    private String servico;
 }

@@ -12,6 +12,7 @@ import unijui.salao.agendamento.application.AgendamentoForm;
 import unijui.salao.cliente.infra.ClienteRepository;
 import unijui.salao.funcionario.infra.FuncionarioRepository;
 import unijui.salao.salao.infra.SalaoRepository;
+import unijui.salao.domain.Periodo;
 
 import java.util.List;
 
@@ -46,4 +47,8 @@ public class AgendamentoServiceImpl implements AgendamentoService {
         return new AgendamentoDto(agendamentoRepo.save(new Agendamento(form, salao, funcionario, cliente)));
     }
 
+    @Override
+    public List<Periodo> buscarPeriodosAgendadosFuncionario(int idFuncionario) {
+        return Periodo.buscarPeriodosAgendadosFuncionario(agendamentoRepo.findAllByFuncionarioId(idFuncionario));
+    }
 }

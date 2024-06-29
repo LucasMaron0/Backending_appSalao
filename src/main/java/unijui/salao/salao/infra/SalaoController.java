@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/salao")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class SalaoController {
 
     private SalaoService salaoService;

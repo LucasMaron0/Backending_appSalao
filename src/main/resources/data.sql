@@ -1,4 +1,4 @@
-INSERT INTO User (username, role) VALUES ('lucas', '0');
+INSERT INTO User (username, role) VALUES ('data_sql_teste', '0');
 
 INSERT INTO Salao (nome, user_id) VALUES ('Salão A', '1');
 INSERT INTO Salao (nome) VALUES ('Salão B');

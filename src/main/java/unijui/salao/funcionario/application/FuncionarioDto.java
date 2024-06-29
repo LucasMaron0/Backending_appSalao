@@ -2,7 +2,7 @@ package unijui.salao.funcionario.application;
 
 import lombok.Data;
 import unijui.salao.funcionario.domain.Funcionario;
-import unijui.salao.utils.enums.Servicos;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +10,14 @@ import java.util.List;
 @Data
 public class FuncionarioDto {
 
+    private int idFuncionario;
     private String nomeFuncionario;
     private String nomeSalao;
-    private List<Servicos> servicosPrestados;
+    private List<String> servicosPrestados;
 
 
     public FuncionarioDto (Funcionario funcionario){
+        this.idFuncionario = funcionario.getId();
         this.nomeFuncionario = funcionario.getNome();
         this.nomeSalao = funcionario.getSalao().getNome();
         this.servicosPrestados = funcionario.getServicosPrestados();

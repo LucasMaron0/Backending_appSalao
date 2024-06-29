@@ -5,22 +5,24 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import unijui.salao.user.application.CreateKeycloakUserForm;
 import unijui.salao.user.application.UserDataDto;
-import unijui.salao.user.domain.KeycloakService;
+import unijui.salao.user.domain.KeycloakServiceImpl;
 import unijui.salao.user.domain.UserDataService;
 
 @RestController
 @RequestMapping("/user")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class UserDataController {
 
     private UserDataService userService;
 
-    private KeycloakService keycloakService;
+    private KeycloakServiceImpl keycloakService;
 
 
     @GetMapping
     public UserDataDto getData(@RequestHeader("Authorization") String token) {
-        return userService.getUserData(token);
+        UserDataDto dataDto =  userService.getUserData(token);
+        return dataDto;
     }
 
 
